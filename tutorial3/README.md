@@ -131,7 +131,7 @@ In this section, you are going to be building and compiling Lmod from source. Lm
      sudo dnf install -y epel-release
      sudo dnf install -y tcl-devel tcl tcllib  bc
      sudo dnf install -y lua lua-posix lua-term
-     sudo dnf --enable-repo=devel install lua-devel
+     sudo dnf --enablerepo=devel install lua-devel
      ```
    * APT
      ```bash
@@ -319,7 +319,7 @@ Code compiled specifically for HPC hardware can use instruction sets like `AVX`,
    sudo apt install build-essential hwloc libhwloc-dev libevent-dev gfortran wget
 
    # Pacman
-   sudo dnf install base-devel gfortran git gcc wget
+   sudo pacman install base-devel gfortran git gcc wget
    ```
 
 1. Fetch and Compile OpenBLAS Source Files
@@ -630,6 +630,17 @@ Everything is now in place for you to run HPL across your two compute nodes. You
   ```bash
   mpirun -np 2 --hostfile hosts ./xhpl
   ```
+
+# Application Benchmark Profiling
+
+## HWLock
+
+## Numactl
+
+## VTUNE
+
+Recompile with `-parallel-source-info=2` flag.
+
 # HPC Challenge
 
 HPC Challenge (or HPCC) is benchmark suite which contains 7 micro-benchmarks used to test various performance aspects of your cluster. HPCC includes HPL which it uses to access FLOPs performance. Having successfully compiled and executed HPL, the process is fairly straight forward to setup HPCC (it uses the same Makefile structure).
