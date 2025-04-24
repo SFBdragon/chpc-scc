@@ -160,6 +160,8 @@ You will be evaluated on your overall progress in the tutorials. Below you will 
     1. [Accessing the NICIS Cloud](tutorial1/README.md#accessing-the-nicis-cloud)
     1. [Verify your Teams' Project Workspace and Available Resources](tutorial1/README.md#verify-your-teams-project-workspace-and-available-resources)
     1. [Generating SSH Keys](tutorial1/README.md#generating-ssh-keys)
+    1. [Create a New Private Virtual Network](tutorial1/README.md#create-a-new-private-virtual-network)
+    1. [Create a New Router](tutorial1/README.md#create-a-new-router)
     1. [Launch a New Instance](tutorial1/README.md#launch-a-new-instance)
     1. [Linux Flavors and Distributions](tutorial1/README.md#linux-flavors-and-distributions)
         1. [Summary of Linux Distributions](tutorial1/README.md#summary-of-linux-distributions)
@@ -220,7 +222,7 @@ You will be evaluated on your overall progress in the tutorials. Below you will 
 1. [Application Benchmarks and System Evaluation](tutorial3/README.md#application-benchmarks-and-system-evaluation)
     1. [GROMACS (ADH Cubic)](tutorial3/README.md#gromacs-adh-cubic)
     1. [LAMMPS (Lennard-Jones)](tutorial3/README.md#lammps-lennard-jones)
-    1. [Qiskit (Quantum Volume)](tutorial3/README.md#qiskit-quantum-volume**
+    1. [Qiskit (Quantum Volume)](tutorial3/README.md#qiskit-quantum-volume)
 
 **Tutorial 4** demonstrates how to configure docker containers to deploy a monitoring stack, comprising of a metrics database service, an exporting / scraping service and a metric visualization services. You will then learn the very basics of how to visualize and interpret data. You will then learn how to automate the deployment of your Sebowa OpenStack infrastructure. Lastly, you'll deploy a scheduler and submit a job to it.
 

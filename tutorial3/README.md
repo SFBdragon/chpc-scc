@@ -131,7 +131,7 @@ In this section, you are going to be building and compiling Lmod from source. Lm
      sudo dnf install -y epel-release
      sudo dnf install -y tcl-devel tcl tcllib  bc
      sudo dnf install -y lua lua-posix lua-term
-     sudo dnf --enable-repo=devel install lua-devel
+     sudo dnf --enablerepo=devel install lua-devel
      ```
    * APT
      ```bash
@@ -171,6 +171,19 @@ In this section, you are going to be building and compiling Lmod from source. Lm
 > You and your team are **STRONGLY** encouraged to review and make sure you understand the Compile, Build and Installation instructions for Lmod as these steps will apply to virtually all application benchmarks you will encounter in this competition.
 
 ## Lmod Usage
+
+Complete your Lmod installation by sourcing the appropriate profile configuration:
+```bash
+# For a generic configuration
+source ~/lmod/lmod/lmod/init/profile
+
+# Alternatively you can source a specific profile configuration
+# for you shell environment.
+#
+# Remember to append your local profile or rc file with the
+# appropriate configuration.
+
+```
 
 With Lmod installed, you'll now have some new commands on the terminal. Namely, these are: `module <subcommand>`. The important ones for you to know and use are: `module avail`, `module list`, `module load` and `module unload`. These commands do the following:
 
@@ -319,7 +332,7 @@ Code compiled specifically for HPC hardware can use instruction sets like `AVX`,
    sudo apt install build-essential hwloc libhwloc-dev libevent-dev gfortran wget
 
    # Pacman
-   sudo dnf install base-devel gfortran git gcc wget
+   sudo pacman install base-devel gfortran git gcc wget
    ```
 
 1. Fetch and Compile OpenBLAS Source Files
@@ -630,6 +643,21 @@ Everything is now in place for you to run HPL across your two compute nodes. You
   ```bash
   mpirun -np 2 --hostfile hosts ./xhpl
   ```
+
+# Application Benchmark Profiling
+
+## HWLock
+
+In order to visualize and understand the layout of the hardware  add the following
+
+## Numactl
+
+
+
+## VTune
+
+Recompile with `-parallel-source-info=2` flag.
+
 # HPC Challenge
 
 HPC Challenge (or HPCC) is benchmark suite which contains 7 micro-benchmarks used to test various performance aspects of your cluster. HPCC includes HPL which it uses to access FLOPs performance. Having successfully compiled and executed HPL, the process is fairly straight forward to setup HPCC (it uses the same Makefile structure).
