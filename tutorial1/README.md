@@ -236,11 +236,11 @@ You will now create a new `router`, to route traffic between your `vlan` that yo
 
 1. From your Team's OpenStack Project Workspace, navigate to `Network` &#8594; `Routers` and click `Create Router`.
 
-   <p align="center"><img alt="OpenStack Create New Private Network." src="./resources/openstack_create_router_01.png" width=900 /></p>
+   <p align="center"><img alt="OpenStack Create New Private Network." src="./resources/openstack_create_private_router_01.png" width=900 /></p>
 
 1. Enter a router name, a sensible choice would be `<TEAMNAME>-router`, and then click `Create Router`.
 
-   <p align="center"><img alt="OpenStack Create New Private Network." src="./resources/openstack_create_router_01.png" width=900 /></p>
+   <p align="center"><img alt="OpenStack Create New Private Network." src="./resources/openstack_create_private_router_02.png" width=600 /></p>
 
 ## Launch a New Instance
 
