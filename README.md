@@ -160,6 +160,8 @@ You will be evaluated on your overall progress in the tutorials. Below you will 
     1. [Accessing the NICIS Cloud](tutorial1/README.md#accessing-the-nicis-cloud)
     1. [Verify your Teams' Project Workspace and Available Resources](tutorial1/README.md#verify-your-teams-project-workspace-and-available-resources)
     1. [Generating SSH Keys](tutorial1/README.md#generating-ssh-keys)
+    1. [Create a New Private Virtual Network](tutorial1/README.md#create-a-new-private-virtual-network)
+    1. [Create a New Router](tutorial1/README.md#create-a-new-router)
     1. [Launch a New Instance](tutorial1/README.md#launch-a-new-instance)
     1. [Linux Flavors and Distributions](tutorial1/README.md#linux-flavors-and-distributions)
         1. [Summary of Linux Distributions](tutorial1/README.md#summary-of-linux-distributions)

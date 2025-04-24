@@ -172,6 +172,19 @@ In this section, you are going to be building and compiling Lmod from source. Lm
 
 ## Lmod Usage
 
+Complete your Lmod installation by sourcing the appropriate profile configuration:
+```bash
+# For a generic configuration
+source ~/lmod/lmod/lmod/init/profile
+
+# Alternatively you can source a specific profile configuration
+# for you shell environment.
+#
+# Remember to append your local profile or rc file with the
+# appropriate configuration.
+
+```
+
 With Lmod installed, you'll now have some new commands on the terminal. Namely, these are: `module <subcommand>`. The important ones for you to know and use are: `module avail`, `module list`, `module load` and `module unload`. These commands do the following:
 
 | Command                       | Operation                                            |
@@ -635,9 +648,13 @@ Everything is now in place for you to run HPL across your two compute nodes. You
 
 ## HWLock
 
+In order to visualize and understand the layout of the hardware  add the following
+
 ## Numactl
 
-## VTUNE
+
+
+## VTune
 
 Recompile with `-parallel-source-info=2` flag.
 

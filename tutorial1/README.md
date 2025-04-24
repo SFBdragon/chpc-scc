@@ -21,6 +21,8 @@ This tutorial will conclude with you downloading, installing and running the Hig
     1. [Accessing the NICIS Cloud](#accessing-the-nicis-cloud)
     1. [Verify your Teams' Project Workspace and Available Resources](#verify-your-teams-project-workspace-and-available-resources)
     1. [Generating SSH Keys](#generating-ssh-keys)
+    1. [Create a New Private Virtual Network](#create-a-new-private-virtual-network)
+    1. [Create a New Router](#create-a-new-router)
     1. [Launch a New Instance](#launch-a-new-instance)
     1. [Linux Flavors and Distributions](#linux-flavors-and-distributions)
         1. [Summary of Linux Distributions](#summary-of-linux-distributions)
@@ -207,9 +209,42 @@ Once you have successfully generated an SSH key pair, navigate to `Compute` &rar
 
 <p align="center"><img alt="Import id_25519.pub into OpenStack." src="./resources/openstack_import_public_key_highlight.png" width=900 /></p>
 
+## Create a New Private Virtual Network
+
+You will now be creating a new private Virtual Local Area Network (VLAN). Only your team has access to this private virtual network, and it must be created in order for your compute nodes to be able to communicate to each other, and have their traffic *'routed'* through to the internet.
+
+1. From your Team's OpenStack Project Workspace, navigate to `Network` &#8594; `Networks` and click `Create Network`.
+
+   <p align="center"><img alt="OpenStack Create New Private Network." src="./resources/openstack_create_private_network_01.png" width=900 /></p>
+
+1. Enter a network name for your new private VLAN. A sensible choice would be your `<TEAMNAME>-vlan`.
+
+   <p align="center"><img alt="OpenStack Create New Private Network." src="./resources/openstack_create_private_network_02.png" width=600 /></p>
+
+1. Enter a subnet name for your private VLAN. You can re-use your VLAN name, or alternatively specify `<TEAMNAME>-subnet`.
+1. You must also specify a valid [private network](https://en.wikipedia.org/wiki/Reserved_IP_addresses) in [CIDR notation](https://whatismyipaddress.com/cidr).
+
+   <p align="center"><img alt="OpenStack Create New Private Network." src="./resources/openstack_create_private_network_03.png" width=600 /></p>
+
+1. Complete the configuration by click on `Next` and then `Create`.
+
+   <p align="center"><img alt="OpenStack Create New Private Network." src="./resources/openstack_create_private_network_04.png" width=600 /></p>
+
+## Create a New Router
+
+You will now create a new `router`, to route traffic between your `vlan` that you created in the previous step and your public facing interface, which wil give you cluster access to the internet.
+
+1. From your Team's OpenStack Project Workspace, navigate to `Network` &#8594; `Routers` and click `Create Router`.
+
+   <p align="center"><img alt="OpenStack Create New Private Network." src="./resources/openstack_create_router_01.png" width=900 /></p>
+
+1. Enter a router name, a sensible choice would be `<TEAMNAME>-router`, and then click `Create Router`.
+
+   <p align="center"><img alt="OpenStack Create New Private Network." src="./resources/openstack_create_router_01.png" width=900 /></p>
+
 ## Launch a New Instance
 
-From your Team's OpenStack Project Workspace, navigate to `Compute` &#8594; `Instance` and click `Launch Instance**.
+From your Team's OpenStack Project Workspace, navigate to `Compute` &#8594; `Instance` and click `Launch Instance`.
 
 <p align="center"><img alt="OpenStack Launch New Instance." src="./resources/openstack_launch_instance_highlight.png" width=900 /></p>
 
@@ -227,7 +262,7 @@ There are a number of considerations that must be taken into account when select
 
 An argument could be made, that the best way to acquire Linux systems administration skills, is to make daily use of a Linux Distribution by running it on your personal laptop, desktop or workstation at home / school.
 
-This is something for you and your team to investigate after the competition and will not be covered in these tutorials. If you feel that you are not comfortable completely migrating to a Linux-based environment, there are a number of methods that can be implemented to assist you in transitioning from Windows to a Linux (or macOS) based *'Daily Driver*:
+This is something for you and your team to investigate after the competition and will not be covered in these tutorials. If you feel that you are not comfortable completely migrating to a Linux-based environment, there are a number of methods that can be implemented to assist you in transitioning from Windows to a Linux (or macOS) based *'Daily Driver'*:
 * Dual-boot Linux alongside your Windows environment,
 * Windows Subsystem for Linux [(WSL)](https://learn.microsoft.com/en-us/linux/install),
 * Running Linux VM's locally within your Windows environment,
@@ -292,22 +327,22 @@ An important aspect of system administration is resource monitoring, management 
 
 The following table summarizes the various permutations and allocations that can be used for designing your clusters within your Team's Project Workspace on Sebowa's OpenStack cloud platform.
 
-| Cluster Configurations     | Instance Flavor | Compute (vCPUS) | Memory (RAM) | Storage (Disk) |
-|----------------------------|:---------------:|:---------------:|:------------:|:--------------:|
-|                            |                 |                 |              |                |
-| Dedicated Head Node        | scc24.C2.M4.S60    | 2               | 4 GB         | 60 GB          |
-| Compute Node 01            | scc24.C8.M16.S10    | 8               | 16 GB        | 10 GB          |
-| Compute Node 02            | scc24.C8.M16.S10    | 8               | 16 GB        | 10 GB          |
-|                            |                 |                 |              |                |
-|                            |                 |                 |              |                |
-| Hybrid Head / Compute Node | scc24.C6.M12.S60    | 6               | 12 GB        | 60 GB          |
-| Compute Node 01            | scc24.C6.M12.S10    | 6               | 12 GB        | 10 GB          |
-| Compute Node 02            | scc24.C6.M12.S10    | 6               | 12 GB        | 10 GB          |
-|                            |                 |                 |              |                |
-|                            |                 |                 |              |                |
-| Hybrid Head / Compute Node | scc24.C10.M20.S60   | 10              | 20 GB        | 60 GB          |
-| Compute Node 01            | scc24.C8.M16.S10    | 8               | 16 GB        | 10 GB          |
-|                            |                 |                 |              |                |
+| Cluster Configurations     | Instance Flavor   | Compute (vCPUS) | Memory (RAM) | Storage (Disk) |
+|----------------------------|:-----------------:|:---------------:|:------------:|:--------------:|
+|                            |                   |                 |              |                |
+| Dedicated Head Node        | scc24.C2.M4.S60   | 2               | 4 GB         | 60 GB          |
+| Compute Node 01            | scc24.C8.M16.S10  | 8               | 16 GB        | 10 GB          |
+| Compute Node 02            | scc24.C8.M16.S10  | 8               | 16 GB        | 10 GB          |
+|                            |                   |                 |              |                |
+|                            |                   |                 |              |                |
+| Hybrid Head / Compute Node | scc24.C6.M12.S60  | 6               | 12 GB        | 60 GB          |
+| Compute Node 01            | scc24.C6.M12.S10  | 6               | 12 GB        | 10 GB          |
+| Compute Node 02            | scc24.C6.M12.S10  | 6               | 12 GB        | 10 GB          |
+|                            |                   |                 |              |                |
+|                            |                   |                 |              |                |
+| Hybrid Head / Compute Node | scc24.C10.M20.S60 | 10              | 20 GB        | 60 GB          |
+| Compute Node 01            | scc24.C8.M16.S10  | 8               | 16 GB        | 10 GB          |
+|                            |                   |                 |              |                |
 
 Type *"scc"* in the search bar and select the **scc24.C2.M4.S60** instance flavor.
 
