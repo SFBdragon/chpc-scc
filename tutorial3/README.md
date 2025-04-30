@@ -20,7 +20,9 @@ Student Cluster Competition - Tutorial 3
     1. [Top500 List](#top500-list)
 1. [Spinning Up a Second Compute Node Using a Snapshot](#spinning-up-a-second-compute-node-using-a-snapshot)
     1. [Running HPL Across Multiple Nodes](#running-hpl-across-multiple-nodes)
-    
+1. [Application Benchmark Profiling](#application-benchmark-profiling)
+    1. [Hardware Topology](#hardware-topology)
+    1. [VTune](#vtune)
 1. [HPC Challenge](#hpc-challenge)
 1. [Application Benchmarks and System Evaluation](#application-benchmarks-and-system-evaluation)
     1. [GROMACS (ADH Cubic)](#gromacs-adh-cubic)
@@ -683,9 +685,10 @@ You're now going to recompile HPL across *"multiple"* nodes, using Intel oneAPI'
    ```
 1. Run profiling tool
    ```bash
-   mpirun -np <NUM_PROCESSORS -ppn <PROCS_PER_NODE> -f hosts.txt -gtool "vtune -collect hpc-performance -data-limit=0 -r result_init:<MPI_RANK_TO_MONITOR>" ./xhpl
+   mpirun -np <NUM_PROCESSORS> -ppn <PROCS_PER_NODE> -f <HOSTSFILE> -gtool "vtune -collect hpc-performance -data-limit=0 -r result_init:<MPI_RANK_TO_MONITOR>" ./xhpl
    ```
-
+1. Monitor the performance behavior for different configurations:
+   - Vary the `<NUM_PROCS>` vs `<PROCS_PER_NODE>` vs `<NUM+_THREADS>` and repeat the experiments.
 
 > [!Tip]
 > You may need to create a symbolic link to in the binaries directory of the compiler sub-directory between `icc` and `icx`.
