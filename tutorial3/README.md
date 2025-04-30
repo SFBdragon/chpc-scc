@@ -20,6 +20,7 @@ Student Cluster Competition - Tutorial 3
     1. [Top500 List](#top500-list)
 1. [Spinning Up a Second Compute Node Using a Snapshot](#spinning-up-a-second-compute-node-using-a-snapshot)
     1. [Running HPL Across Multiple Nodes](#running-hpl-across-multiple-nodes)
+    
 1. [HPC Challenge](#hpc-challenge)
 1. [Application Benchmarks and System Evaluation](#application-benchmarks-and-system-evaluation)
     1. [GROMACS (ADH Cubic)](#gromacs-adh-cubic)
@@ -646,15 +647,48 @@ Everything is now in place for you to run HPL across your two compute nodes. You
 
 # Application Benchmark Profiling
 
-## HWLock
+In order to visualize and understand the a portable abstraction of the layout of the hierarchical topology of modern hardware architectures, you can make use of the Portable Hardware Locality `hwlock` software package. This will give you insight into NUMA memory nodes, processor packages, shared caches, cores and simultaneous multi-threading.
 
-In order to visualize and understand the layout of the hardware  add the following
+## Hardware Topology
 
-## Numactl
+You will be using `hwloc` to help you understand how you are going to be mapping `<OpenMP / pThreads>` to `<MPI Ranks>`.
 
-
+1. Install `lstopo` and `numactl`:
+   ```bash
+   sudo dnf -y install numactl hwloc hwloc-libs hwloc-gui
+   ```
+1. Print the layout and topology of the memory, CPU cores and peripherals
+   ```bash
+   lstopo <FILENAME>.png
+   ```
 
 ## VTune
+
+You're now going to recompile HPL across *"multiple"* nodes, using Intel oneAPI's `vtune` application for profiling.
+
+1. Recompile HPL
+   You must ensure the following Intel oneAPI modules are configure and loaded
+   ```bash
+   ml tbb compiler-rt mkl mpi vtune advisor intel_ipp_intel64
+   ```
+1. Should you have a firewall or security groups configured, ensure that you open the appropriate network ports:
+   ```bash
+   # Take note of the relavant nodes where this is required
+   export I_MPI_HYDRA_SERVICE_PORT=<SERVICE_PORT> # ex: 50000
+   export I_MPI_PORT_RANGE=<PORT_RANGE> # ex: 50000:50500
+   ```
+1. Configure the number of OpenMPI Threads that should spawn with the application:
+   ```bash
+   export OMP_NUM_THREADS=<Threads_per_MPI_Rank>
+   ```
+1. Run profiling tool
+   ```bash
+   mpirun -np <NUM_PROCESSORS -ppn <PROCS_PER_NODE> -f hosts.txt -gtool "vtune -collect hpc-performance -data-limit=0 -r result_init:<MPI_RANK_TO_MONITOR>" ./xhpl
+   ```
+
+
+> [!Tip]
+> You may need to create a symbolic link to in the binaries directory of the compiler sub-directory between `icc` and `icx`.
 
 Recompile with `-parallel-source-info=2` flag.
 
