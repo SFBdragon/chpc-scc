@@ -307,6 +307,8 @@ Alternatively, you may want to make use of a different cloud image or operating 
 
 <p align="center"><img alt="OpenStack Select Source." src="./resources/openstack_add_arch1.png" width=900 /></p>
 
+After browsing to the image that you'd like to use, enter a sensible `Image Name`, and ensure that you use the correct format.
+
 <p align="center"><img alt="OpenStack Select Source." src="./resources/openstack_add_arch2.png" width=900 /></p>
 
 ## OpenStack Instance Flavors
