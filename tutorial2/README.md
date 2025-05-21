@@ -687,7 +687,7 @@ User and group names do not matter to Linux, only the numerical IDs. Let us demo
 
 1. Create a new user on the head node, let's call it `outofsync`. If you check it's IDs with `id outofsync`, you should see it belongs to UID/GID `1001`.
    ```bash
-   sudo adduser outofsync
+   sudo useradd -m outofsync
    ```
 
 1. Set the password for this user and log in as this user.
@@ -850,7 +850,7 @@ You will now create a new user and add them to the `wheel` group so they have `s
 
    Congratulations on successfully running your first Ansible playbook.
 
-# WirGuard VPN Cluster Access
+# WireGuard VPN Cluster Access
 
 WireGuard is a modern, high-performance, and easy-to-use VPN (Virtual Private Network) protocol that aims to provide a simple yet secure way to create encrypted network connections. WireGuard uses a combination of public and private keys for each peer.
 
