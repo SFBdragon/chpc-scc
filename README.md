@@ -119,10 +119,10 @@ You will need to submit the following for scoring and evaluation by the judges:
 You are tasked with designing a small cluster, with at least three nodes, to the value of R 500  000.00 (ZAR) and present your design to the judging panel. In your design you must specify hardware and software for an operational cluster and describe how it functions. The design must be based on servers and interconnects from either [HPE](https://buy.hpe.com/us/en/servers-systems), and accessories from either [NVIDIA](https://www.nvidia.com/en-us/high-performance-computing/), or [AMD](https://www.amd.com/en/solutions/high-performance-computing.html) or [Intel](https://www.intel.com/content/www/us/en/high-performance-computing/hpc-products.html). You *MUST* use the prices you find in the [Parts List Spreadsheet](resources/CHPC_Student_Cluster_Competition_Parts_List_2025.xlsx).
 
 The primary purpose of your HPC cluster is to run the following applications and benchmarks as efficiently as possible:
-* [Amber](https://ambermd.org/)
-* [ICON](https://icon-model.org/)
-* [SwiftSIM](https://github.com/SWIFTSIM/SWIFT)
-* [MLPerf](https://www.nvidia.com/en-us/data-center/resources/mlperf-benchmarks/)
+* [code_saturne](https://www.code-saturne.org/cms/web/)
+* [SeisSol](https://seissol.org/)
+* [OpenMX](https://www.openmx-square.org/index.html)
+* [Fine-Tuning LlaMA 3 using LoRA and QLoRA](https://www.llama.com/docs/how-to-guides/fine-tuning/)
 
 In addition, your choice of design must take into consideration:
 * Base Platform (Server),
