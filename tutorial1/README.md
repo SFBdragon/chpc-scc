@@ -245,6 +245,21 @@ You will now create a new `router`, to route traffic between your `vlan` that yo
 
 ## Create a New Security Group
 
+You will now create a new `security group`, to control and restrict traffic between your external, public facing interface and the rest of the internet.
+
+1. From your Team's OpenStack Project Workspace, navigate to `Network` &#8594; `Security Groups` and click `Create Security Group`. Enter a security group name, a sensible choice would be `<TEAMNAME>-sg` and then click `Create Security Group`. This will create an empty security group profile, that permits all outbound traffic.
+
+   <p align="center"><img alt="OpenStack Create New Private Network." src="./resources/openstack_create_private_sg_01.png" width=900 /></p>
+
+1. You will now be allowing **"inbound"** SSH connections from the internet by opening TCP Port 22. Start by clicking on `Add Rule`. Enter a sensible description and the SSH port number.
+
+   <p align="center"><img alt="OpenStack Create New Private Network." src="./resources/openstack_create_private_router_02.png" width=600 /></p>
+
+1. Your security groups can be modified at any time, event after creation of an instance. Any time you are required to open a firewall port, remember to also open the corresponding port within your OpenStack workspace security group.
+
+> [!TIP]
+> A complete list of TCP and UDP ports required to be opened on your security groups is provided later on when you are spinning up your first VM and selecting a security group.
+
 ## Launch a New Instance
 
 From your Team's OpenStack Project Workspace, navigate to `Compute` &#8594; `Instance` and click `Launch Instance`.
@@ -390,9 +405,9 @@ In order for you to be able to SSH into your newly created OpenStack instance, y
 
 1. Select ***Associate Floating IP*** from the *Create Snapshot* dropdown menu, just below the *Actions* tab:
    <p align="center"><img alt="OpenStack Running State." src="./resources/openstack_associate_floating_ip.png" width=900 /></p>
-1. From the *Manage Floating IP Associations* dialog box, click the "➕" and select *publicnet*:
+1. From the *Manage Floating IP Associations* dialog box, click the "➕" and select *Public Internet*:
    <p align="center"><img alt="OpenStack Running State." src="./resources/openstack_public_net.png" width=900 /></p>
-1. Select the `154.114.57.*` IP address allocated and click on the *Associate* button.
+1. Select the `154.114.52.*` IP address allocated and click on the *Associate* button.
    <p align="center"><img alt="OpenStack Running State." src="./resources/openstack_added_floating_ip.png" width=900 /></p>
 
 ## Troubleshooting
@@ -412,7 +427,7 @@ In order for you to be able to SSH into your newly created OpenStack instance, y
 
 * Dissociating Floating IP
 
-  If your VM is deleted then the floating IP associated with that deleted VM will stay in your project under `Networks -> Floating IPs` for future use. Should you accidentally associate your floating IP to one of your compute nodes, dissociate it as per the diagram below, so that it may be allocated to your head node. Selecting the floating IP and clicking `Release Floating IPs` will send the floating IP back to the pool and you can call a tutor to help you get back your IP.
+If your VM is deleted then the floating IP associated with that deleted VM will stay in your project under `Networks -> Floating IPs` for future use. Should you accidentally associate your floating IP to one of your compute nodes, dissociate it as per the diagram below, so that it may be allocated to your head node. Selecting the floating IP and clicking `Release Floating IPs` will send the floating IP back to the pool and you can call a tutor to help you get back your IP.
   <p align="center"><img alt="OpenStack Instance flavor." src="./resources/openstack_troubleshooting_dissociate_float_ip.png" width=900 /></p>
 
 # Introduction to Basic Linux Administration
