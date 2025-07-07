@@ -41,7 +41,7 @@ You are strongly encouraged to get help and even assist others by [Opening and P
 
 ## Timetable
 
-Everyday will comprise of four lectures in the mornings and tutorials taking place in the afternoons. A [PDF Version of the Timetable](./resources/CHPC_2025_SCC_Local_Selection_Round_Timetable.pdf) is available for you to download.
+Everyday will comprise of four lectures in the mornings and tutorials taking place in the afternoons. A [PDF Version of the Timetable](resources/CHPC_2025_SCC_Selection_Round_Timetable.pdf) is available for you to download.
 
 <p align="center"><img alt="Timetable." src="resources/CHPC_2025_SCC_Local_Selection_Round_Timetable.png" width=900 /></p>
 
@@ -154,7 +154,7 @@ After the presentation the judging panel will have an opportunity to ask questio
 Each Team must work together to answer and complete the [Technical Knowledge Assessment](resources/CHPC_SCC_2025_Technical_Knowledge_Assessment.docx) to the best of their ability. Team Captains must email your findings to the organizers **no later than 23:00 12th July**. You are required to demonstrate your understanding of the concepts in **YOUR OWN WORDS**. Keep your answers succinct and to the point. Your answers to each of the questions, should not exceed more than 2-3 lines.
 
 > [!CAUTION]
-> The deadline for submission of the Technical Knowledge Assessment is **23:00 on Saturday the 12th July **. Late submissions will be penalized.
+> The deadline for submission of the Technical Knowledge Assessment is **23:00 on Saturday the 12th July**. Late submissions will be penalized.
 
 ## Tutorials
 
@@ -175,6 +175,7 @@ You will be evaluated on your overall progress in the tutorials. Below you will 
     1. [Generating SSH Keys](tutorial1/README.md#generating-ssh-keys)
     1. [Create a New Private Virtual Network](tutorial1/README.md#create-a-new-private-virtual-network)
     1. [Create a New Router](tutorial1/README.md#create-a-new-router)
+    1. [Create a New Security Group](tutorial1/README.md##create-a-new-security-group)
     1. [Launch a New Instance](tutorial1/README.md#launch-a-new-instance)
     1. [Linux Flavors and Distributions](tutorial1/README.md#linux-flavors-and-distributions)
         1. [Summary of Linux Distributions](tutorial1/README.md#summary-of-linux-distributions)
