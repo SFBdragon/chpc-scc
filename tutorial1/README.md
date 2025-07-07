@@ -299,9 +299,17 @@ The following list provides a few examples of Linux distros that *may* be availa
 
 * **Source-Based**: [Linux From Scratch (LFS)](https://www.linuxfromscratch.org/) is a project that teaches you how to create your own Linux system from source code, using another Linux system. Learn how to install, configure and customize LFS and BLFS, and use tools for automation and management. Once you are **very** familiar with Linux, LFS is an excellent medium term side project that you peruse in you own time. Only Linux experts need apply.
 
-Type *"Rocky"* in the search bar, and select the **Rocky-9.3** cloud image as a boot source.
+Type *"Rocky"* in the search bar, and select the **Rocky 9** cloud image as a boot source.
 
 <p align="center"><img alt="OpenStack Select Source." src="./resources/openstack_source_image.png" width=900 /></p>
+
+Alternatively, you may want to make use of a different cloud image or operating system. For example you can download the [latest Arch Linux QCOW2 Cloud image](https://geo.mirror.pkgbuild.com/images/latest/), and upload it to your OpenStack workspace on Sebowa.
+
+<p align="center"><img alt="OpenStack Select Source." src="./resources/openstack_add_arch1.png" width=900 /></p>
+
+After browsing to the image that you'd like to use, enter a sensible `Image Name`, and ensure that you use the correct format.
+
+<p align="center"><img alt="OpenStack Select Source." src="./resources/openstack_add_arch2.png" width=900 /></p>
 
 ## OpenStack Instance Flavors
 
